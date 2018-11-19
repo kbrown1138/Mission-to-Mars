@@ -30,16 +30,10 @@ def scrape ():
     # Collect the latest News Title and Paragraph Text.
     latest_news_title = soup.find('div', class_='content_title').text
     latest_news_p = soup.find('div', class_='article_teaser_body').text
-
-
-    # Assign the text to variables that you can reference later.
-    news_title = "NASA to Host Media Call on Next Mars Landing Site"
-
-    news_p = "NASA will host a media teleconference at 9 a.m. PST (noon EST) Monday, Nov. 19, to provide details about the Mars 2020 rover’s landing site on the Red Planet."
-
+    
     # Store data in dictionary
-    mars_data["news_title"] = news_title
-    mars_data["news_p"] = news_p
+    mars_data["news_title"] = latest_news_title
+    mars_data["news_p"] = latest_news_p
 
 
     # URL of page to be scraped
