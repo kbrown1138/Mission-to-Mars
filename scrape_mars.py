@@ -11,7 +11,7 @@ def init_browser():
 # Define scrape function
 def scrape ():
 
-    # Initialize browser functzion
+    # Initialize browser function
     browser = init_browser()
     
     # Initialize mars_data dictionary
