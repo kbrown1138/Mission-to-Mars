@@ -30,7 +30,7 @@ def scrape ():
     # Collect the latest News Title and Paragraph Text.
     latest_news_title = soup.find('div', class_='content_title').text
     latest_news_p = soup.find('div', class_='article_teaser_body').text
-    
+
     # Store data in dictionary
     mars_data["news_title"] = latest_news_title
     mars_data["news_p"] = latest_news_p
@@ -39,9 +39,8 @@ def scrape ():
     # URL of page to be scraped
     jpl_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(jpl_url)
-    browser.click_link_by_partial_text('Crater Landslide')
+    browser.click_link_by_partial_text('FULL IMAGE')
     expand = browser.find_by_css('a.fancybox-expand')
-    expand.click()
     jpl_html = browser.html
 
     # Create BeautifulSoup object; parse with 'html.parser'
@@ -52,7 +51,7 @@ def scrape ():
     image_path = f'https://www.jpl.nasa.gov{image}'
 
     # Assign the url string to a variable called featured_image_url.
-    featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22849_hires.jpg'
+    featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA19323_ip.jpg'
 
     # Store data in dictionary
     mars_data["featured_image"] = featured_image_url
