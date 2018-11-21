@@ -49,12 +49,9 @@ def scrape ():
     # Use splinter to navigate the site and find the image url for the current Featured Mars Image
     image = soup.find('img', class_='fancybox-image')['src']
     image_path = f'https://www.jpl.nasa.gov{image}'
-
-    # Assign the url string to a variable called featured_image_url.
-    featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA19323_ip.jpg'
-
+    
     # Store data in dictionary
-    mars_data["featured_image"] = featured_image_url
+    mars_data["featured_image"] = image_path
 
 
     # URL of page to be scraped
