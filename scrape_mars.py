@@ -66,11 +66,8 @@ def scrape ():
     tweets = soup.find('ol', class_='stream-items')
     weather = tweets.find('p', class_="tweet-text").text
 
-    # Save the tweet text for the weather report as a variable called mars_weather.
-    mars_weather = 'Sol 2230 (2018-11-14), high -5C/23F, low -72C/-97F, pressure at 8.59 hPa, daylight 06:22-18:39'
-
     # Store data in dictionary
-    mars_data["weather"] = mars_weather
+    mars_data["weather"] = weather
 
 
     # URL of page to be scraped
